@@ -3,105 +3,95 @@
    Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
+@*class="modal fade"*@
+<form  id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="topnav">
    <p class="active">General Bill Entry</p>
    <label>Bill ID</label>
    <div class="search-container">
-      <input type="text" placeholder="Search.." name="search">
+      <input type="text" id="search" placeholder="Search.." name="search">
      @* <button type="submit"><i class="fa fa-search"></i></button>*@
    </div>
    <select class="split">
-      <option>Report 1</option>
-      <option>Report 2</option>
+      <option value="1">Report 1</option>
+      <option value="2">Report 2</option>
    </select>
    <button class="split">Clear</button>
    <button type="submit" id="add" class="split">Save</button>
 
 </div>
-
-<form>
    <div>
       <div class="row">
          <div class="column" style="width: 250px;margin-left:10px;margin-right:10px">
             <label for="company">Company</label>
             <select id="company" placeholder="Select Company...">
-               <option>DIRD Composite Textiles Ltd.</option>
-               <option>DIRD Garments Limited</option>
-               <option>Dipta Garments Ltd.</option>
-               <option>DIRD Washing Plant Ltd.</option>
-               <option>DIRD Engineering Limited</option>
-               <option>Dipta Orchids Ltd</option>
+               <option value="1">DIRD Composite Textiles Ltd.</option>
+               <option value="2">DIRD Garments Limited</option>
+               <option value="3">Dipta Garments Ltd.</option>
+               <option value="4">DIRD Washing Plant Ltd.</option>
+               <option value="5">DIRD Engineering Limited</option>
+               <option value="6">Dipta Orchids Ltd</option>
             </select>
          </div>
          <div class="column" style="width:250px;margin-left:10px;margin-right:10px ">
             <label for="Supplier">Supplier</label>
             <select id="Supplier" placeholder="Select Supplier...">
-               <option>Textile Antares (0002)</option>
-               <option>Flora Limited (0003)</option>
-               <option>Techno Spinning Mills Ltd</option>
-               <option>Square Yarns Ltd. (0007)</option>
-               <option>DIRD Engineering Limited</option>
-               <option>Square Yarns Ltd. (0007)</option>
+               <option value="1">Textile Antares (0002)</option>
+               <option value="2">Flora Limited (0003)</option>
+               <option value="3">Techno Spinning Mills Ltd</option>
+               <option value="4">Square Yarns Ltd. (0007)</option>
+               <option value="5">DIRD Engineering Limited</option>
+               <option value="6">Square Yarns Ltd. (0007)</option>
             </select>
          </div>
          <div class="column" style="width:250px;margin-left:10px;margin-right:10px">
             <label for="PaymentMode">Payment Mode</label>
             <select id="PaymentMode" placeholder="Select Payment Mode...">
-               <option>Bank Gurantee(226)</option>
-               <option>Cash(014)</option>
-               <option>Cheque (CHQ)(154)</option>
-               <option>FDD(205)</option>
-               <option>LC(015)</option>
-               <option>FTT(172)</option>
+               <option value="1">Bank Gurantee(226)</option>
+               <option value="2">Cash(014)</option>
+               <option value="3">Cheque (CHQ)(154)</option>
+               <option value="4">FDD(205)</option>
+               <option value="5">LC(015)</option>
+               <option value="6">FTT(172)</option>
             </select>
          </div>
          <div class="column" style="width:250px;margin-left:10px;margin-right:10px">
-            <label for="PaymentMode">Payment Mode</label>
-            <select id="PaymentMode" placeholder="Select Payment Mode...">
-               <option>Dollar Dollar </option>
-               <option>Euro</option>
-               <option>Pound</option>
-               <option>Swiss Frank</option>
-               <option>Taka</option>
-               <option>Yen</option>
+            <label for="Currency">Currency</label>
+            <select id="Currency" placeholder="Select Payment Mode...">
+               <option value="1">Dollar Dollar </option>
+               <option value="2">Euro</option>
+               <option value="3">Pound</option>
+               <option value="4">Swiss Frank</option>
+               <option value="5">Taka</option>
+               <option value="6">Yen</option>
             </select>
          </div>
-         @*<div class="column" style="width:250px;margin-left:10px;margin-right:10px">
-         <label for="Currency">Currency</label>
-         <select id="Currency" placeholder="Select Currency...">
-         <option>Dollar </option>
-         <option>Euro </option>
-         <option>Pound </option>
-         <option>Swiss Frank </option>
-         <option>Taka </option>
-         <option>Yen </option>
-         </select>
-         </div>*@
+         <div id="msg"></div>
          <div class="column" style="width:250px;margin-left:10px;margin-right:10px">
             <label for="company">Bill Reference</label>
-            <input type="text" name="BillRef" />
+            <input type="text" id="billReference" name="BillRef" />
          </div>
       </div>
       <div class="row">
          <div class="column2" style="width:250px;margin-left:10px;margin-right:10px">
             <label for="remarks">Remarks</label>
-            <input type="text" name="Remarks" />
+            <input type="text" id="txtRemarks"  name="Remarks" />
          </div>
          <div class="column2" style="width:250px;margin-left:10px;margin-right:10px">
             <label for="adjustamount">Adjust Amount</label>
-            <input type="text" name="adjustamount" />
+            <input type="text" id="adjustamount" name="adjustamount" />
          </div>
          <div class="column2" style="width:250px;margin-left:10px;margin-right:10px">
-            <label for="company">Bill Reference</label>
-            <input type="text" name="BillRef" />
+            <label for="Quantity">Quantity</label>
+            <input type="text" id="Quantity" name="BillRef" />
          </div>
          <div class="column2" style="width:250px;margin-left:10px;margin-right:10px">
             <label for="netpayable">Net payable</label>
-            <input type="text" name="netpayable" />
+            <input type="text" id="netpayable" name="netpayable" />
          </div>
          <div class="column2" style="width:250px;margin-left:10px;margin-right:10px">
             <label for="adjustnote">Adjust Note</label>
-            <input type="text" name="adjustnote" />
+            <input type="text" id="adjustnote" name="adjustnote" />
          </div>
       </div>
    </div>
